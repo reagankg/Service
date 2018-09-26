@@ -1,70 +1,3 @@
-<?php
-
-if ($_POST["submit"]) {
-
-      
-      
-     if (!$_POST['name']) {
-
-       $error="<br />Please enter your name";
-
-     }
-      
-     if (!$_POST['email']) {
-
-       $error.="<br />Please enter your email address";
-
-     }
-     
-     
-     if (!$_POST['phone']) {
-     
-      $error.="<br /> Please enter your phone number";
-     
-     }
-     
-      
-     if (!$_POST['message']) {
-
-       $error.="<br />Please enter a message";
-
-     }
-      
-     if ($_POST['email']!="" AND !filter_var($_POST['email'],
-FILTER_VALIDATE_EMAIL)) {
-      
-     $error.="<br />Please enter a valid email address";
-
-     }
-     
-      
-     if ($error) {
-
- $result='<div class="alert alert-danger"><strong>There were error(s)
-in your form:</strong>'.$error.'</div>';
-
-     } else {
-
-      /* THE EMAIL WHERE YOU WANT TO RECIEVE THE CONTACT MESSAGES */
- if (mail("youremailaddress.com", "Message from Your Website Name",
-  
- 
-"Name: ".$_POST['name']."
-Email: ".$_POST['email']."
-Phone: ".$_POST['phone']." 
-Message: ".$_POST['message'])) {
-$result='<div class="alert alert-success"> <strong> Thank
-you!</strong> We\'ll get back to you shortly.</div>';
-} else {
-$result='<div class="alert alert-danger">Sorry, there was
-an error sending your message. Please try again later.</div>';
-}
-}
-}
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,29 +67,29 @@ an error sending your message. Please try again later.</div>';
 
                 <ul class="dropdown-menu">
 
-                  <li><a href="https://yourwebsitename.com/chiropractors-capitol-hill.html">CAPITOL HILL</a></li>
+                  <li><a href="chiropractors-capitol-hill.html">CAPITOL HILL</a></li>
 
                     <li class="divider" role="separator"></li>
 
-                  <li><a href="https://yourwebsitename.com/chiropractors-mount-baker.html">MOUNT BAKER</a></li>
+                  <li><a href="chiropractors-mount-baker.html">MOUNT BAKER</a></li>
 
                     <li class="divider" role="separator"></li>
 
-                  <li><a href="https://yourwebsitename.com/chiropractors-greenwood.html">GREENWOOD</a></li>
+                  <li><a href="chiropractors-greenwood.html">GREENWOOD</a></li>
 
                     <li class="divider" role="separator"></li>
 
-                  <li><a href="https://yourwebsitename.com/chiropractors-ravenna.html">RAVENNA</a></li>
+                  <li><a href="#">RAVENNA</a></li>
             
                 </ul>
 
             </li><!--- /.dropdown-->
 
-            <li><a href="https://yourwebsitename.com/apply-to-be-listed.html"><span class="hvr-underline-from-center">APPLY TO BE LISTED</span></a></li>
+            <li><a href="apply-to-be-listed.html"><span class="hvr-underline-from-center">APPLY TO BE LISTED</span></a></li>
 
-            <li><a href="https://yourwebsitename.com/blog.html"><span class="hvr-underline-from-center">BLOG</span></a></li>
+            <li><a href="blog.html"><span class="hvr-underline-from-center">BLOG</span></a></li>
 
-            <li><a href="https://yourwebsitename.com/contact.php"><span class="hvr-underline-from-center">CONTACT</span></a></li>
+            <li><a href="contact.php"><span class="hvr-underline-from-center">CONTACT</span></a></li>
 
         </ul>
 
@@ -213,20 +146,20 @@ an error sending your message. Please try again later.</div>';
         <form method="post">
 
           <div class="form-group">
-            <label for="name">Name:</label> <input class="form-control" name="name" placeholder="Your Name" type="text" value="<?php echo $_POST['name']; ?>">
+            <label for="name">Name:</label> <input class="form-control" name="name" placeholder="Your Name" type="text">
           </div>
 
           <div class="form-group">
-            <label for="email">Email:</label> <input class="form-control" name="email" placeholder="Your Email" type="email" value="<?php echo $_POST['email']; ?>">
+            <label for="email">Email:</label> <input class="form-control" name="email" placeholder="Your Email" type="email">
           </div>
 
           <div class="form-group">
-            <label for="phone">Contact Number:</label> <input class="form-control" name="phone" placeholder="Your Phone" type="tel" value="<?php echo $_POST['phone']; ?>">
+            <label for="phone">Contact Number:</label> <input class="form-control" name="phone" placeholder="Your Phone" type="tel">
           </div>
 
           <div class="form-group">
             <label for="message">Message:</label> 
-            <textarea class="form-control" id="message" name="message"><?php echo $_POST['message']; ?></textarea>
+            <textarea class="form-control" id="message" name="message"></textarea>
           </div><br><br>
 
           <p align="center"><input class="btn btn-success btn-lg" name="submit" type="submit" value="Send Message"></p><br>
@@ -243,11 +176,11 @@ an error sending your message. Please try again later.</div>';
 
     <div align="center" class="footerlinks">
 
-      <a href="https://yourwebsitename.com/apply-to-be-listed.html">APPLY TO BE LISTED</a> 
+      <a href="apply-to-be-listed.html">APPLY TO BE LISTED</a> 
 
-      <a href="https://yourwebsitename.com/blog.html">BLOG</a> 
+      <a href="blog.html">BLOG</a> 
 
-      <a href="https://yourwebsitename.com/contact.php">CONTACT</a>
+      <a href="contact.html">CONTACT</a>
 
     </div><!-- /footerlinks-->
 
@@ -260,8 +193,8 @@ an error sending your message. Please try again later.</div>';
 
     <div align="center" class="policy-links">
 
-      <a href="https://yourwebsitename.com/privacy-policy.html" rel="nofollow">Privacy Policy</a> 
-      <a href="https://yourwebsitename.com/terms-and-conditions.html" rel="nofollow">Terms &amp; Conditions</a>
+      <a href="privacy-policy.html" rel="nofollow">Privacy Policy</a> 
+      <a href="terms-and-conditions.html" rel="nofollow">Terms &amp; Conditions</a>
 
     </div><!-- /.policy-links-->
 
